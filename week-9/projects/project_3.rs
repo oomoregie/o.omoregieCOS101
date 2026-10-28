@@ -22,6 +22,9 @@
      let sum = commissioners[index].to_owned() + ministry[index] + zone[index];
      println!("{} {} {}", sum);
     }
+ 
+ let mut file = std::fs::File::create("EFCC Merge.csv").expect("create failed");
+    file.write_all(sum.as_bytes()).expect("write failed");
 
  println!("\nData written to file.");
 }
